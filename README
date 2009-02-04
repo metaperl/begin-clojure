@@ -1,0 +1,9 @@
+Begin Clojure
+=============
+
+A port of the programs in Simon Cozen's "Beginning Perl" 
+to Clojure.
+
+* http://www.perl.org/books/beginning-perl/[Beginning Perl]
+* http://www.clojure.org[Clojure]
+
