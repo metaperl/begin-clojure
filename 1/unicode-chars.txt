@@ -1,0 +1,18 @@
+[02:21] hiredman: metaperl: all characters in clojure are unicode
+[02:21] metaperl: how would you get at one via hex?
+[02:21] metaperl: the unicode char 1F18 for instance
+[02:22] hiredman: ,(.codePointAt  "âŒ½foo" 0)
+[02:22] clojurebot: 9021
+[02:22] hiredman: ,(char 9021)
+[02:22] clojurebot: \âŒ½
+[02:23] Join: jdz (n=jdz@85.254.211.133)
+[02:23] metaperl: that's odd... my irc client has garbled text: (.codePointAt  "GIBBERISH" 0)
+[02:23] hiredman: ,(Integer/toHexString 9021)
+[02:23] clojurebot: "233d"
+[02:23] hiredman: metaperl: your irc client is not doing unicode then
+[02:23] hiredman: you should get a better one
+[02:24] hiredman: ,(char 0233d)
+[02:24] clojurebot: Eval-in-box threw an exception:Invalid number: 0233d
+[02:24] hiredman: ,(char 0x233d)
+[02:24] clojurebot: \âŒ½
+[02:24] hiredman: :P
