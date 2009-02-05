@@ -1,0 +1,14 @@
+[02:37] metaperl: moving on to numbers... how would I print the decimal value of 01101 interpreted as oct and binary?
+[02:38] hiredman: ,(Integer/parseInt "01101" 2)
+[02:38] clojurebot: 13
+[02:39] hiredman: http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Integer.html <-- go nuts
+[02:39] metaperl: well I need to create a lambda that takes a base and map over 2 and 8
+[02:39] metaperl: ,'(2 8)
+[02:39] clojurebot: (2 8)
+[02:40] metaperl: ,(map (fn [x] (+ 1 x)) '(2 8))
+[02:40] clojurebot: (3 9)
+[02:40] metaperl: ,(map (fn [x] (Integer/parseInt "01101" x) '(2 8))
+[02:40] clojurebot: Eval-in-box threw an exception:EOF while reading
+[02:40] hiredman: uh
+[02:41] metaperl: ,(map (fn [x] (Integer/parseInt "01101" x)) '(2 8))
+[02:41] clojurebot: (13 577)
